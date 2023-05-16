@@ -1,5 +1,5 @@
 # instalar pacote Bar Chart Race
-# !pip install bar_chart_race -q
+!pip install bar_chart_race -q
 
 # importar as bibliotecas necessárias
 import pandas as pd
@@ -11,6 +11,9 @@ warnings.filterwarnings('ignore')
 
 # importar o dataset dados_série_b
 df = pd.read_csv('/home/import_michael/PycharmProjects/barChartRace/dados_serieB_2022_pontos.csv')
+
+# Definindo a coluna Rodadas como índice
+df = df.set_index(['Rodadas'])
 
 # Criação da animação do gráfico
 bcr.bar_chart_race(df = df, title = 'Brasileirão Série B | 2022\nPontos dos Clubes',
